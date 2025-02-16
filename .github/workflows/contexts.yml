@@ -1,0 +1,17 @@
+name: Contexts
+on: push
+env:
+  EXAPLE: "TOP"
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        echo "${{ github.actor }}"
+        echo "${{ github.event_name }}"
+        echo "${{ runner.arch }}"
+        echo "EXAMPLE: $EXAMPLE"
+      - env:
+          EXAMPLE: "STEP LEVEL ENV"
+        run: |
+          echo "EXAMPLE: $EXAMPLE"
