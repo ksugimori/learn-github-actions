@@ -1,5 +1,5 @@
 run-name: Run by @${{ github.actor }}
-on: push
+on: workflow_dispatch
 jobs:
     print:
       name: Super Useful Job
