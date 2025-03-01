@@ -1,4 +1,4 @@
-name: Naming
+run-name: Run by @{{ github.actor }}
 on: push
 jobs:
     print:
