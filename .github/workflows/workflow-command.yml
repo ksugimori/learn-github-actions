@@ -8,4 +8,11 @@ jobs:
     steps:
       - run: echo "::add-mask::${PASSWORD}"
       - run: echo "${PASSWORD}"
+  log-without-curly-braces:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: SuperSecretValue
+    steps:
+      - run: echo "::add-mask::$PASSWORD"
+      - run: echo "$PASSWORD"
     
