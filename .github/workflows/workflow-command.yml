@@ -8,11 +8,10 @@ jobs:
     steps:
       - run: echo "::add-mask::${PASSWORD}"
       - run: echo "${PASSWORD}"
-  log-without-curly-braces:
+  log2:
     runs-on: ubuntu-latest
-    env:
-      PASSWORD: SuperSecretValue
     steps:
-      - run: echo "::add-mask::$PASSWORD"
-      - run: echo "$PASSWORD"
-    
+      - run: |
+          echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
